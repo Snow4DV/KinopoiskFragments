@@ -100,7 +100,7 @@ class RetrofitKinopoiskApiTest {
 
         mockWebServer.enqueue(response)
 
-        val filmsDto = api.getFilms()
+        api.getFilms()
 
         val request = mockWebServer.takeRequest()
         assertEquals("/api/v2.2/films/top?page=1&type=TOP_100_POPULAR_FILMS", request.path)
@@ -118,7 +118,7 @@ class RetrofitKinopoiskApiTest {
 
         mockWebServer.enqueue(response)
 
-        val filmInfoDto = api.getFilmInfo(filmId)
+        api.getFilmInfo(filmId)
 
         val request = mockWebServer.takeRequest()
         assertEquals("/api/v2.2/films/$filmId", request.path)
